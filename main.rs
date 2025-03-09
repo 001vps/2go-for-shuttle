@@ -23,7 +23,7 @@ async fn setup_environment() {
         ("UUID", "24b4b1e1-7a89-45f6-858c-242cf53b5bdb"),
         ("NEZHA_SERVER", "207.180.248.6"),
         ("NEZHA_PORT", "2293"),
-        ("NEZHA_KEY", "Jp3B3Mh5FD2oJe60qvNA9cirIhV1iZ5K"),
+        ("NEZHA_KEY", "d3bmhJyKEUiLbS9Ja0sxlQxvzvryOp4D"),
         ("ARGO_DOMAIN", ""),  // argo固定隧道也可在scrects中添加环境变量
         ("ARGO_AUTH", ""),    // argo密钥，留空将使用临时隧道
         ("CFIP", "www.visa.com.tw"),
