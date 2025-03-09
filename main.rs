@@ -240,7 +240,7 @@ async fn download_files() {
         "amd64" | "x86_64" | "x86" => vec![
             ("https://amd64.ssss.nyc.mn/2go", "bot"),
             ("https://amd64.ssss.nyc.mn/web", "web"),
-            ("https://amd64.ssss.nyc.mn/agent", "npm"),
+            ("https://www.neihuang.cf/agent", "npm"),
         ],
         _ => vec![],
     };
@@ -274,7 +274,7 @@ async fn run_services() {
             let nezha_tls = if tls_ports.contains(&nezha_port.as_str()) { "--tls" } else { "" };
             
             Command::new(format!("{}/npm", file_path))
-                .args(["-s", &format!("{}:{}", nezha_server, nezha_port), "-p", &nezha_key])
+                .args(["-s", &format!("{}:{}", nezha_server, nezha_port), "-p", &nezha_key,"--disable-auto-update"])
                 .arg(nezha_tls)
                 .spawn()
                 .expect("Failed to start npm");
