@@ -24,8 +24,8 @@ async fn setup_environment() {
         ("NEZHA_SERVER", "v1.neihuang.cf"),
         ("NEZHA_PORT", "443"),
         ("NEZHA_KEY", "pM0mOajyRcJc2Gv77R"),
-        ("ARGO_DOMAIN", "shuttle.neihuang.cf"),  // argo固定隧道也可在scrects中添加环境变量
-        ("ARGO_AUTH", "{"AccountTag":"567edeb8cb8e42a914fbc54ebc6ab9d3","TunnelSecret":"1rcMLq4rxdIShGaCw/t4ZiGWmc0zoapLsgeFB/9J3iw=","TunnelID":"44c50041-aeb5-46d5-a2fc-b17bbec4e22f","Endpoint":""}"),    // argo密钥，留空将使用临时隧道
+        ("ARGO_DOMAIN", ""),  // argo固定隧道也可在scrects中添加环境变量
+        ("ARGO_AUTH", ""),    // argo密钥，留空将使用临时隧道
         ("CFIP", "www.visa.com.tw"),
         ("CFPORT", "443"),
         ("NAME", "shuttle"),
