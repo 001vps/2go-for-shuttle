@@ -24,8 +24,8 @@ async fn setup_environment() {
         ("NEZHA_SERVER", "v1.neihuang.cf"),
         ("NEZHA_PORT", "443"),
         ("NEZHA_KEY", "pM0mOajyRcJc2Gv77R"),
-        ("ARGO_DOMAIN", "shuttle.neihuang.cf"),  // argo固定隧道也可在scrects中添加环境变量
-        ("ARGO_AUTH", ""),    // argo密钥，留空将使用临时隧道
+        ("ARGO_DOMAIN", "v2shuttle.neihuang.gq"),  // argo固定隧道也可在scrects中添加环境变量
+        ("ARGO_AUTH", "eyJhIjoiNTY3ZWRlYjhjYjhlNDJhOTE0ZmJjNTRlYmM2YWI5ZDMiLCJ0IjoiY2ZkOGU1ZGUtODk3Zi00ZjkwLTgxMzItNzQ0ZWU4MDg0ZGRmIiwicyI6Ik5EWmpOVEV6WW1ZdE5EbGhOUzAwTVRBM0xXSmhPVEV0TkRjNE5XSXlNVGd6T1dJNSJ9"),    // argo密钥，留空将使用临时隧道
         ("CFIP", "www.visa.com.tw"),
         ("CFPORT", "443"),
         ("NAME", "shuttle"),
@@ -34,17 +34,10 @@ async fn setup_environment() {
         ("SUB_PATH", "sub"), // 订阅路径
     ];
 
-    // 设置 ARGO_AUTH 的 JSON 字符串
-    let argo_auth = r#"{"AccountTag":"567edeb8cb8e42a914fbc54ebc6ab9d3","TunnelSecret":"1rcMLq4rxdIShGaCw/t4ZiGWmc0zoapLsgeFB/9J3iw=","TunnelID":"44c50041-aeb5-46d5-a2fc-b17bbec4e22f","Endpoint":""}"#;
 
-    for (key, default_value) in &env_vars {
+  for (key, default_value) in env_vars {
         if env::var(key).is_err() {
-            // 如果是 ARGO_AUTH，设置为 argo_auth 的值
-            if *key == "ARGO_AUTH" {
-                env::set_var(key, argo_auth);
-            } else {
-                env::set_var(key, default_value);
-            }
+            env::set_var(key, default_value);
         }
     }
 }
